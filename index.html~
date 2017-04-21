@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Begin Head -->
+
+    <head>	
+        <meta charset="utf-8">
+        <title>Aventura Matemática</title>
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.10.4.custom.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="jquery/plugin/knob/jquery.knob.js"></script>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+	<script type="text/javascript" src="js/mainscript.js"></script>
+	<script type="text/javascript" src="js/shopgame.js"></script>
+	<script type="text/javascript" src="js/krokogame.js"></script>
+	<script type="text/javascript" src="js/endresultgame.js"></script>
+	<script type="text/javascript" src="js/nextgame.js"></script>
+	<script type="text/javascript" src="js/cheesegame.js"></script>
+	<script type="text/javascript" src="js/forms.js"></script>
+	<script type="text/javascript" src="js/sortgame.js"></script>
+	<script type="text/javascript" src="js/tennumber.js"></script>
+	<script type="text/javascript" src="js/selectionscreen.js"></script>
+	<script type="text/javascript" src="js/delivery.js"></script>
+	<script type="text/javascript" src="js/slidergame.js"></script>
+	<script type="text/javascript" src="js/gridadigame.js"></script>
+	<script type="text/javascript" src="js/wallgame.js"></script>
+	<script type="text/javascript" src="js/sharinggame.js"></script>
+	<script type="text/javascript" src="js/memorygame.js"></script>
+	<script type="text/javascript" src="js/mathtable.js"></script>
+	<script type="text/javascript" src="js/castlegame.js"></script>
+	<script type="text/javascript" src="js/tigerdiv.js"></script>
+	<script type="text/javascript" src="js/minigameresult.js"></script>
+	<script type="text/javascript" src="js/quizgame.js"></script>
+	<script type="text/javascript" src="js/circlegame.js"></script>
+	<script type="text/javascript" src="js/endresultscreen.js"></script>
+	<link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
+      href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+	<link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
+      href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+	<link rel="stylesheet" href="css/activity.css">
+	<script data-main="js/loader" src="lib/require.js"></script>
+
+    </head>
+
+<!-- End Head -->
+
+<!-- ==================================
+	Beginn of the body
+====================================-->
+    <body>
+
+
+<!-- Attention!! This toolbar can be displayed after the update. At the moment the application only runs inside a browser. 
+The browser already has a toolbar itself. Therefore it is not necessary to have this toolbar. Othwerwise the resolution of the 
+game does not fix -->
+
+
+<div id="main-toolbar" class="toolbar">
+  <!--<button class="toolbutton pull-right" id="stop-button" title="Stop"></button>-->
+</div>
+
+<script type="text/javascript">
+
+//Create the SVG Viewport
+var svgContainer = d3.select("body").append("svg").attr("id","maingamesvg")
+                                     .attr("width",width)
+                                     .attr("height",height);
+
+
+</script>
+
+<!-- ==========================================================================================
+Code for the Shop Mini Game
+=============================================================================================-->
+<div id="shopdiv">
+<h1>Compra artículos haciendo clic sobre ellos. Intenta alcanzar el valor indicado.</h1>
+<table id="shoptable">
+<tr>
+<td>
+	<table class="shopitems">
+	<tr><td class="shopimage"><img number=0 border="0" src="./images/Shop/ball.png" width="100" height="100" onclick="addelement($(this).attr('src'),$(this).attr('number'))"></td><td class="shopprice">5.00</td></tr>
+	<tr><td class="shopimage"><img number=1 border="0" src="./images/Shop/soap.png" width="100" height="100" onclick="addelement($(this).attr('src'),$(this).attr('number'))"></td><td class="shopprice">10.00</td></tr>
+	<tr><td class="shopimage"><img number=2 border="0" src="./images/Shop/guitar.png" width="100" height="100" onclick="addelement($(this).attr('src'),$(this).attr('number'))"></td><td class="shopprice">20.00</td></tr>
+	<tr><td class="shopimage"><img number=3 border="0" src="./images/Shop/waterball.png" width="100" height="100" onclick="addelement($(this).attr('src'),$(this).attr('number'))"></td><td class="shopprice">50.00</td></tr>
+	<tr><td class="shopimage"><img number=4 border="0" src="./images/Shop/bear.png" width="100" height="100" onclick="addelement($(this).attr('src'),$(this).attr('number'))"></td><td class="shopprice">100.00</td></tr>
+	</table>
+</td>
+<td>
+	<table>
+	
+	<!-- Adding an svg container to the cartrow -->
+ 
+	<tr id="cartrow">
+		<script type="text/javascript">
+
+		var svgelement = d3.select("#cartrow").append("svg").attr("id", "shopsvg")
+                                     .attr("width",600)
+                                     .attr("height",300);
+
+		svgelement.append("svg:image").attr("id", "cart")
+      		.attr("xlink:href", "./images/Shop/cart.png")
+      		.attr("width", 450)
+      		.attr("height", 250).attr("x", 20).attr("y",50);
+
+		</script>
+	</tr>
+	<tr>
+	
+	<!-- Creating the cart list with some items -->
+
+	<table id="cartlist">
+	<tr><td id="item1"> </td><td id="price1"> </td></tr>
+	<tr><td id="item2"> </td><td id="price2"> </td></tr>
+	<tr><td id="item3"> </td><td id="price3"> </td></tr>
+	<tr><td id="item4"> </td><td id="price4"> </td></tr>
+	<tr><td id="item5"> </td><td id="price5"> </td></tr>
+	<tr><td id="item6"> </td><td id="price6"> </td></tr>
+	<tr><td id="item7"> </td><td id="price7"> </td></tr>
+	<tr><td id="item8"> </td><td id="price8"> </td></tr>
+	<tr><td id="item9"> </td><td id="price9"> </td></tr>
+	<tr><td id="item10"> </td><td id="price10"> </td></tr>
+	<tr><td id="item11"> </td><td id="price11"> </td></tr>
+	<tr><td id="item12"> </td><td id="price12"> </td></tr>
+	<tr><td id="item13"> </td><td id="price13"> </td></tr>
+	<tr><td id="item14"> </td><td id="price14"> </td></tr>
+	<tr><td id="item15"> </td><td id="price15"> </td></tr>
+	<tr><td id="item16"> </td><td id="price16"> </td></tr>
+	<tr><td id="item17"> </td><td id="price17"> </td></tr>
+	<tr><td id="item18"> </td><td id="price18"> </td></tr>
+	<tr><td id="item19"> </td><td id="price19"> </td></tr>
+	<tr><td id="item20"> </td><td id="price20"> </td></tr>
+        <tr><td id="item21"> </td><td id="price21"> </td></tr>	
+	<tr class="buttonrow">
+		<td><button class="shopbuttons" onClick="clearlist()">Vaciar</button></td>
+		<td><button class="shopbuttons" onClick="pagar()">Pagar</button></td>
+	</tr>
+	</table>
+        </tr>
+        </table>
+</td>
+</tr>
+</table>
+</div>
+
+<!---- ================================================================
+Krokogame
+====================================================================-->
+<div id="krokodiv">
+<h1>Qué lado es más grande?</h1>
+<table id="krokotable">
+<tr class="krokbuttonrow">
+  <td><button class="krokobuttons" sign=">" onclick="drawcroco($(this).attr('sign'))">></button></td>
+  <td><button class="krokobuttons" sign="=" onclick="drawcroco($(this).attr('sign'))">=</button></td>
+  <td><button class="krokobuttons" sign="<" onclick="drawcroco($(this).attr('sign'))"><</button></td>
+</tr>
+<tr>
+  <table>
+  <tr id="krokorow">
+
+  <!-- Adding another svg container to the krokorow -->
+
+  <script type="text/javascript">
+
+		var kroksvg = d3.select("#krokorow").append("svg").attr("id", "krokosvg")
+                                     .attr("width",1200)
+                                     .attr("height",600);
+
+		</script>
+</tr>
+</table>
+</tr>
+</table>
+
+<div class="continuediv">
+<button id="krokocontinue" onclick="nextquestion()">Continuar</button>
+</div>
+
+</div>
+
+<!----==================================================================
+Counting the forms game
+====================================================================-->
+
+<div id="formgame">
+<h1>Cuenta el número de veces que aparece cada forma</h1>
+<table>
+<tr>
+</tr>
+<tr>
+<td id="formscolumn">
+
+  <!-- Add an svg container to the formscolumn. On this svg the forms will be drawn -->
+
+  <script type="text/javascript">
+  var formsvg = d3.select("#formscolumn").append("svg").attr("id", "formssvg")
+                                     .attr("width",600)
+                                     .attr("height",750);
+
+   </script>
+</td>
+
+<!-- Add the column with the input fields -->
+
+<td>
+	<table id="formentries">
+	<tr>
+		<td class="formtd1">Rectanglos</td>
+		<td class="formtd2"><input id="forminput1" class="forminput" type="text"/></td>
+	</tr>
+	<tr>
+		<td class="formtd1">Circulos</td>
+		<td class="formtd2"><input id="forminput2" class="forminput" type="text"/></td>
+	</tr>
+	<tr>
+		<td class="formtd1">Trianglos</td>
+		<td class="formtd2"><input id="forminput3" class="forminput" type="text"/></td>
+	</tr>
+	<tr>
+		<td><button class="formbutton" onclick="clearelements()">Vaciar</button></td>
+		<td><button class="formbutton" onclick="checkformresults()">Verificar</button></td>
+	</tr>
+	</table>
+</td>
+
+</tr>
+</table>
+</div>
+
+<!----==================================================================
+Endresult Game
+====================================================================-->
+<div id="endresultgame">
+
+<table>
+<tr>
+<h1>Completa con el operador adecuado (+,-)</h1>
+</tr>
+<tr>
+	<td class="numbers"><font id="number1"></font></td>
+	<td><input id="input1" type="text" class="endgameinputs"/></td>
+	<td class="numbers"><font id="number2"></font></td>
+	<td><input id="input2" type="text" class="endgameinputs"/></td>
+	<td class="numbers"><font id="number3"></font></td>
+	<td><input id="input3" type="text" class="endgameinputs"/></td>
+	<td class="numbers"><font id="number4"></font></td>
+	<td class="numbers">=</td>
+	<td class="numbers"><font id="endgame_result"></font></td>
+</tr>
+</table>
+<button class="endgamebuttons" onclick="cleaninputs()">Vaciar</button>
+<button class="endgamebuttons" onclick="endgame_checkresults()">Verificar</button>
+
+</div>
+
+<!----==================================================================
+What is next? Game
+====================================================================-->
+<div id="whatisnextgame">
+
+<table>
+<tr id="nextsvgrow">
+<script type="text/javascript">
+ 
+  //Add the top svg - The svg where the exercise is drawn and completet
+
+  var nextsvg = d3.select("#nextsvgrow").append("svg").attr("id", "nextgamesvg")
+                                     .attr("width",1200)
+                                     .attr("height",410);
+
+   </script>
+<tr>
+<tr>
+
+</tr>
+<script type="text/javascript">
+
+  //Add the bottom svg - The svg that displays the elements
+
+  var selectsvg = d3.select("#nextsvgrow").append("svg").attr("id", "nextselectsvg")
+                                     .attr("width",1200)
+                                     .attr("height",410);
+
+   </script>
+</table>
+
+<!--Adding a div with a button to position the element -->
+<div class="whatisnext_correct_div">
+<button class="whatisnext_correct_button" onclick="correct_nextgame()">Verificar</button>
+</div>
+
+</div>
+
+<!----==================================================================
+Cheese Game
+====================================================================-->
+
+<div id="cheese">
+            <div class="centered">
+		<h1 class="cheese_h1">Arrastra la pieza que falta al medio.</h1>
+		<table>
+		<tr>	<!-- First row is the row with the pictures -->
+		<td class="cheeseexercise"><image id="firstcheese" class="cheeseimages"/></td>
+		<td class="cheeseexercise, cheesetext">+</td>
+		<td id="dropcheese" class="cheeseexercise"></td>	<!-- This is the elment where the cheese pieces can be dropped -->
+		<td class="cheeseexercise, cheesetext">=</td>
+		<td class="cheeseexercise"><image src="./images/cheese/fullcheese.png" class="cheeseimages"/></td>
+		<tr>
+		<!--- Table row with the text for the images -->
+		<tr>
+		<td id="firsttext" class="cheesebreak">9/10</td>
+		<td class="cheesetext">+</td>
+		<td id="secondtext" class="cheesebreak">?</td>
+		<td class="cheesetext">=</td>
+		<td id="resulttext" class="cheesebreak">1</td>
+		</tr>
+		<tr class="cheesebuttonrow">
+		<td> </td>
+    		<td> </td>
+		<td><button id="cheesebutton" onclick="checkcheese()">Continuar</button></td><tr>
+		</table>            
+
+            </div>
+
+	   <!-- The sidebar contains all the cheese elements that you can drag and drop -->
+
+            <div class="sidebar">
+                <table>
+		<tr>
+		<td><image id="cheeseimage1" class="cheeseimages"/></td>
+		</tr>
+		<tr>
+		<td><image id="cheeseimage2" class="cheeseimages"/></td>
+		</tr>
+		<tr>
+		<td><image id="cheeseimage3" class="cheeseimages"/></td>
+		</tr>
+		</table>
+            </div>
+</div>
+
+<!----==================================================================
+Multiplikation by Ten game
+====================================================================-->
+<div id="tengame">
+<h1>Añade el número correcto de ceros a cada resultado.</h1>
+<table>
+
+<tr>
+<td id="firsttennumber" class="tengamenumber"></td>
+<td class="tennumber"></td>
+<td id="secondtennumber" class="tengamenumber"></td>
+<td>
+	<button id="tenbutton1" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton2" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton3" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton4" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+</td>
+</tr>
+<tr>
+<td id="thirdtennumber" class="tengamenumber"></td>
+<td class="tennumber">0</td>
+<td id="fourthtennumber" class="tengamenumber"></td>
+<td>
+	<button id="tenbutton5" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton6" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton7" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton8" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+</td>
+</tr>
+<tr>
+<td id="fifthtennumber" class="tengamenumber"></td>
+<td class="tennumber">00</td>
+<td id="sixthtennumber" class="tengamenumber"></td>
+<td>
+	<button id="tenbutton9" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton10" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton11" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton12" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+</td>
+</tr>
+<tr>
+<td id="seventhtennumber" class="tengamenumber"></td>
+<td class="tennumber">000</td>
+<td id="eighttennumber" class="tengamenumber"></td>
+<td>
+	<button id="tenbutton13" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton14" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton15" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton16" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+</td>
+</tr>
+<tr>
+<td id="ninthtennumber" class="tengamenumber"></td>
+<td class="tennumber">0000</td>
+<td id="tenthtennumber" class="tengamenumber"></td>
+<td>
+	<button id="tenbutton17" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton18" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton19" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+	<button id="tenbutton20" class="tenbutton" sign="?" onclick="tenbuttonclicked($(this).attr('id'), $(this).attr('sign'))">?</button>
+</td>
+</tr>
+
+</table>
+<p id="continuetenbutton">
+<button id="tencontinue" onclick="tencontinuebuttonclicked()">Verificar</button>
+</p>
+
+</div>
+
+<!----==================================================================
+Sort game
+====================================================================-->
+<div id="divisiongame">
+    <div id="divisionheader"> Ordena los elementos comenzando por el más pequeño </div>
+    <div>
+        <div id="divisionsidebar"> 
+
+	<!-- Display a mouse, an arrow and an elephant to make the exercise better understandable -->
+
+	<table>
+		<tr>
+			<td><image class="animals" src="./images/divisionsort/Mouse.png"/></td>
+		</tr>
+		<tr>
+			<td><image src="./images/divisionsort/arrow.png"/ width="200px" height="300px"></td>
+		</tr>
+		<tr>
+			<td><image class="animals" src="./images/divisionsort/Elephant.png"/></td>
+		</tr>
+	</table>
+        </div>
+        <div id="divisionmain">
+
+	<!-- This are the sortable list elements -->
+
+	<ul id="sortable">
+  		<li id="divisionli1" class="divisionli">Item 1</li>
+  		<li id="divisionli2" class="divisionli">Item 2</li>
+  		<li id="divisionli3" class="divisionli">Item 3</li>
+  		<li id="divisionli4" class="divisionli">Item 4</li>
+  		<li id="divisionli5" class="divisionli">Item 5</li>
+  		<li id="divisionli6" class="divisionli">Item 6</li>
+  		<li id="divisionli7" class="divisionli">Item 7</li>
+	</ul>
+	<p class="divisionp">
+		<button class="divisioncontrolbutton" onclick="controldivisiongame()">Verificar</button>
+	<p>
+	
+	</div>        
+    </div>
+</div>
+
+<!----==================================================================
+Selection of the caracter
+====================================================================-->
+<div id="caracterselection">
+<div class="selectiondiv">
+<h1>Cuántas rondas deseas jugar</h1>
+</div>
+
+<table class="selectiontable">
+
+<!-- Display the selction of the number of rounds -->
+
+<tr>
+    <td><button id="roundbutton1" class="roundbutton" onclick="round_button_clicked($(this).attr('id'))">3</button></td>
+    <td><button id="roundbutton2" class="roundbutton" onclick="round_button_clicked($(this).attr('id'))">5</button></td>
+    <td><button id="roundbutton3" class="roundbutton" onclick="round_button_clicked($(this).attr('id'))">10</button></td>
+</tr>
+</table>
+
+<div class="selectiondiv">
+<h1>Elige a tu personaje</h1>
+</div>
+
+<!-- Display the selction of the characters -->
+
+<table class="selectiontable">
+<tr>
+	<td><image <image id="character1" onclick="characterclicked($(this).attr('id'))" class="selectionitem" src="./images/caracterselection/elephant.png"/ width="150px" height="150px"></td>
+	<td><image <image id="character2" onclick="characterclicked($(this).attr('id'))" class="selectionitem" src="./images/caracterselection/gorilla.png"/ width="150px" height="150px"></td>
+	<td><image <image id="character3" onclick="characterclicked($(this).attr('id'))" class="selectionitem" src="./images/caracterselection/donkey.png"/ width="150px" height="150px"></td>
+	<td><image <image id="character4" onclick="alert('Lo sentimos, este personaje está bloqueado. Para desbloquearlo, primero juega el nivel 3 (recoger 3 oro)')" class="selectionitem" src="./images/caracterselection/Locked_character.png"/ width="150px" height="150px"></td>
+</tr>
+</table>
+
+<div class="selectiondiv">
+<h1>Elige el mundo</h1>
+</div>
+
+<!-- Display the selction of the worlds -->
+
+<table class="selectiontable">
+<tr>
+	<td><div id="levelimage1" onclick="levelimageclicked($(this).attr('id'))"></div></td>
+	<td><div id="levelimage2" onclick="levelimageclicked($(this).attr('id'))"></div></td>
+	<td><div id="levelimage3" onclick="levelimageclicked($(this).attr('id'))"></div></td>
+</tr>
+<tr>
+	<td class="leveltext">Isla Matemática</td>
+	<td class="leveltext">Universo Matemático</td>
+	<td class="leveltext">Viejo Oeste Matemático</td>
+</tr>
+</table>
+
+<div class="selectiondiv">
+<button id="selectioncontinuebutton" onclick="characterselectioncontinue()">Verificar</button>
+</div>
+
+<!-- Div that contains links for the Game rules, the Sources and a link to reset the score -->
+<div class="sourcelink_div">
+<a class="sourcelink" onclick="showgamerules()">Reglas del juego</a>
+<br />
+<a class="sourcelink" onclick="showsources()">Fuente</a>
+<br />
+<a class="sourcelink" onclick="reset_saved_score()">Restablecer puntuación</a>
+</div>
+
+</div>
+
+<!----==================================================================
+Slider Game
+====================================================================-->
+<div id="slidergame">
+
+<h1>Arrastra el punto para representar la fracción</h1>
+
+<!-- Div that contains all the different sliders -->
+
+<div class="sliderdiv">
+<h1 id="sliderh1">3/4</h1>
+<h2 id="valor1">Valor: 0</h2> 
+<input type="range" id="slider1" class="sliders" min="0" max="100" value="0" number="1" onchange="onsliderchange(this.value, $(this).attr('number'))"/>
+
+<h1 id="sliderh2">3/4</h1>
+<h2 id="valor2">Valor: 0</h2> 
+<input type="range" id="slider2" class="sliders" min="0" max="100" value="0" number="2" onchange="onsliderchange(this.value, $(this).attr('number'))"/>
+
+<h1 id="sliderh3">3/4</h1>
+<h2 id="valor3">Valor: 0</h2> 
+<input type="range" id="slider3" class="sliders" min="0" max="100" value="0" number="3" onchange="onsliderchange(this.value, $(this).attr('number'))"/>
+
+<h1 id="sliderh4">3/4</h1>
+<h2 id="valor4">Valor: 0</h2> 
+<input type="range" id="slider4" class="sliders" min="0" max="100" value="0" number="4" onchange="onsliderchange(this.value, $(this).attr('number'))"/>
+
+<br /><br /><br />
+<button class="slidergamebutton" onclick="controlslidergame()">Verificar</button>
+</div>
+</div>
+
+<!----==================================================================
+Wall Game
+====================================================================-->
+<div id="wallgame" style="overflow:hidden">
+
+<div class="wallgametablediv">
+<table class="wallgametable">
+<tr>
+	<!-- Right column with 6 listitems --> 
+	<td>
+	<ol id="selectable1">
+  		<li id="wallgameli1_1" class="wallgameli">Item 1</li>
+  		<li id="wallgameli1_2" class="wallgameli">Item 2</li>
+  		<li id="wallgameli1_3" class="wallgameli">Item 3</li>
+  		<li id="wallgameli1_4" class="wallgameli">Item 4</li>
+  		<li id="wallgameli1_5" class="wallgameli">Item 5</li>
+  		<li id="wallgameli1_6" class="wallgameli">Item 6</li>
+	</ol>
+	</td>
+
+	<!-- Left column with 6 listitems -->
+
+	<td>
+	<ol id="selectable2">
+  		<li id="wallgameli2_1" class="wallgameli">Item 1</li>
+  		<li id="wallgameli2_2" class="wallgameli">Item 2</li>
+  		<li id="wallgameli2_3" class="wallgameli">Item 3</li>
+  		<li id="wallgameli2_4" class="wallgameli">Item 4</li>
+  		<li id="wallgameli2_5" class="wallgameli">Item 5</li>
+  		<li id="wallgameli2_6" class="wallgameli">Item 6</li>
+	</ol>
+	</td>
+</tr>
+</table>
+</div>
+
+<!-- Div that displays the number of trys and also the amount of bananas you will get -->
+
+<div id="wallgame_display">
+<h1 id="wallgame_intentos">Intentos: 0</h1>
+</br>
+<div class="wallgame_display_p">
+<h2><= 8 Intentos = 10 Plátanos</h2>
+<h2>> 8 Intentos = -10 Plátanos</h2>
+</div>
+</div>
+
+</div>
+
+<!----==================================================================
+Div Circlegame
+====================================================================-->
+<div id="circlegame">
+<p>
+<h1 class="circlegameh1">Dibuja el ángulo</h1>
+</p>
+<table class="circlegametable">
+<tr>
+	<td>
+		<h1 id="circleh1_1">180°</h1>
+		<input id="kendocircle1" type="text" data-min="0" data-max="360" value="0" data-fgColor="midnightblue" class="dial">	<!-- The circle elements are created with the help of JQuery Knob -->
+	<td>
+	<td>
+		<h1 id="circleh1_2">180°</h1>
+		<input id="kendocircle2" type="text" data-min="0" data-max="360" value="0" data-fgColor="midnightblue" class="dial">
+	<td>
+</tr>
+<tr>
+	<td>
+		<h1 id="circleh1_3">180°</h1>
+		<input id="kendocircle3" type="text" data-min="0" data-max="360" value="0" data-fgColor="midnightblue" class="dial">
+	<td>
+	<td>
+		<h1 id="circleh1_4">180°</h1>
+		<input id="kendocircle4" type="text" data-min="0" data-max="360" value="0" data-fgColor="midnightblue" class="dial">
+	<td>
+</tr>
+</table>
+<p>
+<button class="circlegamebutton" onclick="checkcirclegame()">Verificar</button>
+</p>
+
+</div>
+
+<!----==================================================================
+Give the bananas to the monkey
+====================================================================-->
+<div id="bananadelivery">
+
+<!-- This div represents the speechbubble -->
+<div id="bananadelivery_elements">
+
+<p id="bananadelivery_speechbubble"></p> <!-- The p contains the text inside the speechbubble -->
+
+<p>
+<button id="deliverybutton1" class="deliverybuttons" onclick="deliverbananas()">Si</button>
+<button id="deliverybutton2" class="deliverybuttons" onclick="notdeliverbananas()">No</button>
+</p>
+
+</div>
+
+</div>
+
+<!----==================================================================
+The round is finished
+====================================================================-->
+<div id="endofround">
+
+<button class="endofroundbutton" onclick="hidesnowfield()">Gracias</button>
+
+</div>
+
+<!----==================================================================
+Div that shows all the sources 
+====================================================================-->
+<div id="sourcediv">
+
+<p><h1>Sources</h1></p>
+
+<p>
+Las imágenes utilizadas en esta aplicación son de uso libre, pero algunas requieren que se incluya el enlace. En esta sección se encuentran las fuentes de todas las imágenes utilizadas.
+</p>
+
+<p>
+Gran parte de las imágenes se encontraron con http://search.creativecommons.org/.
+Algunas imágenes se descargaron de www.iconarchive.co, entre abril y julio de 2014.
+El uso comercial de las imágenes descargadas de Iconarchive está permitido pero requiere que se cite la fuente. Aquí están los enlaces.
+<p>
+
+<ul>
+<li><a href="http://www.visualpharm.com/">Visual Pharm</a></li>
+<li><a href="http://www.designcontest.com">DesignContest</a></li>
+<li><a href="http://www.doublejdesign.co.uk">Double-J Design</a></li>
+<li><a href="http://artdesigner.lv">Art Designer</a></li>
+</ul>
+
+<p>
+<button class="gamerulesbutton" onclick="backfromsource()">Volver al juego</button>
+</p>
+
+</div>
+
+<!-- =================================================================
+Multiplikationtable Game
+=============================================================== -->
+<div id="multiplikationtablediv">
+<h1>Completa la tabla</h1>
+
+<!-- Create the math table -->
+
+<table id="multiplikationtable">
+	<tr>
+		<td id="mathtable_operator" class="multiplikation_table_data" style="background-color: honeydew">*</td>
+		<td id="multi_table_col_header1" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td id="multi_table_col_header2" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td id="multi_table_col_header3" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td id="multi_table_col_header4" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+	</tr>
+	<tr>
+		<td id="multi_table_row_header1" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td id="multi_table_td_1" class="multiplikation_table_data" style="background-color: aliceblue" row="1" column="1">+</td>
+		<td id="multi_table_td_2" class="multiplikation_table_data" style="background-color: aliceblue" row="1" column="2">+</td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_1" onclick="mathtable_inputonclick()" row="1" column="3" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_2" onclick="mathtable_inputonclick()" row="1" column="4" type="text" class="math_table_input"/></td>
+	</tr>
+	<tr>
+		<td id="multi_table_row_header2" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_3" onclick="mathtable_inputonclick()" row="2" column="1" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_4" onclick="mathtable_inputonclick()" row="2" column="2" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_5" onclick="mathtable_inputonclick()" row="2" column="3" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_6" onclick="mathtable_inputonclick()" row="2" column="4" type="text" class="math_table_input"/></td>
+	</tr>
+	<tr>
+		<td id="multi_table_row_header3" class="multiplikation_table_data" style="background-color: mediumturquoise">+</td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_7" onclick="mathtable_inputonclick()" row="3" column="1" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_8" onclick="mathtable_inputonclick()" row="3" column="2" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_9" onclick="mathtable_inputonclick()" row="3" column="3" type="text" class="math_table_input"/></td>
+		<td class="multiplikation_table_data" style="background-color: aliceblue"><input id="multi_table_input_10" onclick="mathtable_inputonclick()" row="3" column="4" type="text" class="math_table_input"/></td>
+	</tr>
+</table>
+
+<p>
+<button class="multiplikationtablebutton" onclick="control_math_table_inputs()">Verificar</button>
+</p>
+
+</div>
+
+
+<!----==================================================================
+Gridaddition Game
+====================================================================-->
+<div id="gridaddition">
+
+<h1>Completa la tarea haciendo clic en la casilla correcta</h1>
+
+<!-- Table with 3 rows. Each row conatins a table that will contain 10 rows and 10 columns -->
+<table class="gridaditcontainertable">
+<tr>
+<td class="gridaditdcontainer">
+<table id="gridaditable1" class="gridadditable" onclick="gridadi_table_clicked($(this).attr('id'), $(this).attr('blues'))">
+</table>
+</td>
+<td class="gridaditdcontainer">
+<table id="gridaditable2" class="gridadditable" onclick="gridadi_table_clicked($(this).attr('id'), $(this).attr('blues'))">
+</table>
+</td>
+<td class="gridaditdcontainer">
+<table id="gridaditable3" class="gridadditable" onclick="gridadi_table_clicked($(this).attr('id'), $(this).attr('blues'))">
+</table>
+</td>
+</tr>
+</table>
+
+<table class="gridaditexttable">
+<tr>
+<td id="adi_text_first" class="gridaditext">65</td>
+<td class="gridaditext">+</td>
+<td id="adi_text_second" class="gridaditext">_ _</td>
+<td class="gridaditext">=</td>
+<td class="gridaditext">100</td>
+</tr>
+</table>
+
+
+<button id="gridadibutton" onclick="gridadi_continue()">Verificar</button>
+
+
+</div>
+
+<!----==================================================================
+Sharing Game
+====================================================================-->
+<div id="sharinggame">
+
+<h1>Reparte las manzanas de modo que cada plato tenga el mismo número de manzanas.</h1>
+
+<!-- This table displays the different apples that you can drag to the plates -->
+
+<table class="share_item_table">
+	<tr>
+		<td class="share_item_td"><img id="appleimage1" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage2" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage3" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage4" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage5" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage6" src="./images/sharegame/apple.png" class="appleimages"/></td>
+	</tr>
+	<tr>
+		<td class="share_item_td"><img id="appleimage7" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage8" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage9" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage10" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage11" src="./images/sharegame/apple.png" class="appleimages"/></td>
+		<td class="share_item_td"><img id="appleimage12" src="./images/sharegame/apple.png" class="appleimages"/></td>
+	</tr>
+</table>
+
+<!-- This table contains the different tables where you can drop the apples-->
+
+<table class="drop_apples_table">
+<tr>
+	<td id="dropapples1" class="drop_apples"></td>
+	<td id="dropapples2" class="drop_apples"></td>
+	<td id="dropapples3" class="drop_apples"></td>
+	<td id="dropapples4" class="drop_apples"></td>
+</tr>
+</table>
+
+<!-- Table that contains the buttons -->
+<table class="share_button_table">
+<tr>
+<td>
+<button onclick="reset_apples()" class="sharegamebuttons">Reset</button>
+</td>
+<td>
+<button onclick="control_sharing_game()" class="sharegamebuttons">Verificar</button>
+</td>
+</tr>
+</table>
+
+</div>
+
+<!----==================================================================
+Memory Game
+====================================================================-->
+<div id="memorygame">
+
+<h1>Encuentra las parejas</h1>
+
+<!-- Table with all the memory fields -->
+
+<table id="memorygametable">
+	<tr class="memorygame_table_row">
+		<td id="memorygame_td1" order="1" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td2" order="2" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td3" order="3" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td4" order="4" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+	</tr class="memorygame_table_row">
+	<tr>
+		<td id="memorygame_td5" order="5" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td6" order="6" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td7" order="7" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td8" order="8" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+	</tr>
+	<tr class="memorygame_table_row">
+		<td id="memorygame_td9" order="9" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td10" order="10" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td11" order="11" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td12" order="12" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+	</tr>
+	<tr class="memorygame_table_row">
+		<td id="memorygame_td13" order="13" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td14" order="14" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td15" order="15" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+		<td id="memorygame_td16" order="16" class="memorygame_td" onclick="memorycard_clicked($(this).attr('order'), $(this).attr('id'))"></td>
+	</tr>
+</table>
+
+<!-- Display of the number of trys -->
+
+<div id="memorygame_display">
+<h1 id="memorygame_intentos">Intentos: 0</h1>
+</br>
+<div class="memorygame_display_p">
+<h2><=30 Intentos = 10 Plátanos</h2>
+<h2><=40 Intentos = 0 Plátanos</h2>
+<h2>>40 Intentos = -10 Plátanos</h2>
+</div>
+</div>
+
+</div>
+
+<!----==================================================================
+Castle Game
+====================================================================-->
+<div id="castlegame">
+
+<!-- This div displays the number of lives -->
+
+<div class="castlegame_livedisplay">
+
+<table>
+<tr>
+<td>
+<img src="./images/castlegame/heart.png" width="60px" height="50px"/>
+</td>
+<td>
+<h1 id="livecastle">Castillo: 3</h1>
+</td>
+</tr>
+<tr>
+<td>
+<img src="./images/castlegame/heart.png" width="60px" height="50px"/>
+</td>
+<td>
+<h1 id="liveplayer">Tu: 3</h1>
+</td>
+</tr>
+</table>
+
+<h2>Elige la respuesta correcta y dispara al castillo</h2>
+
+</div>
+
+<!-- This div represents the result paper -->
+<div class="castle_result_paper"><h1 id="paperh1">10</h1></div>
+
+<!-- This div contains the castleimage -->
+<div id="castlediv"><img id="castleimage" src="./images/castlegame/castle.png" width="200px" height="400px"/></div>
+
+<!-- Here are the fireballs -->
+
+<div class="fireball"><img src="./images/castlegame/fireball_castle.png" width="80px" height="100px"/></div>
+<div class="fireball_player1"><img src="./images/castlegame/fireball_player.png" width="80px" height="100px"/></div>
+<div class="fireball_player2"><img src="./images/castlegame/fireball_player.png" width="80px" height="100px"/></div>
+<div class="fireball_player3"><img src="./images/castlegame/fireball_player.png" width="80px" height="100px"/></div>
+
+<div class="castlegametablediv">
+<table class="casltegame_table">
+
+<!-- Displays the bombs -->
+
+<tr>
+	<td class="castlegame_table_data"><img src="./images/castlegame/bomb.png"/></td>
+	<td class="castlegame_table_data"><img src="./images/castlegame/bomb.png"/></td>
+	<td class="castlegame_table_data"><img src="./images/castlegame/bomb.png"/></td>
+	<td class="castlegame_table_data"></td>
+	<td class="castlegame_table_data"></td>
+<tr>
+
+<!-- Display the different exercises under the bombs -->
+<tr>
+	<td id="castlegame_choice1" class="castlegame_table_data">12 + 5</td>
+	<td id="castlegame_choice2" class="castlegame_table_data">8 + 6</td>
+	<td id="castlegame_choice3" class="castlegame_table_data">9 + 3</td>
+	<td class="castlegame_table_data"></td>
+	<td class="castlegame_table_data"></td>
+</tr>
+
+</table>
+</div>
+
+<!-- Display the caracter -->
+<div class="block"><image id="castlegame_maincaracter" src="./images/caracterselection/donkey.png" width="100px" height="100px"/></div>
+
+<!-- Display the buttons under the castle -->
+<div class="castlegame_buttondiv">
+<input type="image" onclick="castlegame_go_left()" src="./images/castlegame/arrow_left.png" width="150px" height="100px"></input>
+<input type="image" onclick="castlegame_controll()" src="./images/castlegame/shoot.png" width="150px" height="80px"></input>
+<input type="image" onclick="castlegame_go_right()" src="./images/castlegame/arrow_right.png" width="150px" height="100px"></input>
+</div>
+
+</div>
+
+<!----==================================================================
+Boss Quiz
+====================================================================-->
+<div id="bossquiz">
+
+<div class="quiz_exercise">
+<p id="quiz_exercise_responsa_correcta">La respuesta correcta es</p>
+<h1 id="quiz_exercise_h1">6+12</h1>
+</div>
+
+<div class="quiz_answerdiv">
+
+<input id="quiz_input" type="text"></input>
+<button class="quiz_ok_button" onclick="quizgame_ok_clicked()">Ok</button>
+
+</div>
+
+
+<div id="quizgame_tigeranswer">
+<h1 id="quizgame_tigeranswer_h1" class="quizgame_answer_h1">13</h1>
+</div>
+
+<div id="quizgame_tuanswer">
+<h1 id="quizgame_tuanswer_h1" class="quizgame_answer_h1">10</h1>
+</div>
+
+<!-- This div displays the number of points the tiger has -->
+<div id="quizgame_tigerpoints">
+<h1 id="quizgame_tiger_pointdisplay" class="quizgame_frametext">Tigre: 0<h1>
+</div>
+
+<!-- This div displays the number of points the player has -->
+<div id="quizgame_playerpoints">
+<h1 id="quizgame_tu_pointsdisplay" class="quizgame_frametext">Tu: 0<h1>
+</div>
+
+</div>
+
+<!-- ===================================================================
+Tiger div
+====================================================================-->
+<div id="tigerdiv">
+
+<div id="tigerdiv_elements">
+
+<!-- Sppechbuble that represents what the tiger says -->
+<p id="tigerdiv_speechbubble">HaHaHaHa!!! <br /> Usted está jugando contra mí. <br/> El primer jugador en ganar seis proyectos de ley contestó correctamente.</p>
+<p>
+<button id="tigerdiv_okbutton" onclick="tiger_okclicked()">Ok</button>
+</p>
+</div>
+
+</div>
+
+<!-- ===================================================================
+Startscreen div
+====================================================================-->
+<div id="startscreendiv">
+
+<div class="startscreen_gamegoal"><h1 class="startscreen_gamegoal_h1">Recoge plátanos y cambialos <br /> por dinero en efectivo</h1></div>
+
+<!-- This is the progressbar. This element displays the loading from 0% to 100% -->
+<div id="progressbar"><div class="progress-label">Cargar</div></div>
+
+<div id="progress_buttondiv">
+<button id="progress_button" onclick="selectionscreen_continueclicked()">Comenzar</button>
+</div>
+</div>
+
+<!-- ================================================================
+Div that pops up when a new world is playable
+=================================================================-->
+
+<div id="newleveldiv">
+
+<h1>Felicitaciones, has recibido una llave</h1>
+
+<image src="./images/key.png"></image>
+
+<h1 id="unlockedtext"></h1>		<!-- This h1 displays the level that has been unlocked -->
+
+</div>
+
+<!-- ==================================================================
+Div that explains the rules of the game
+===================================================================-->
+<div id="gamerules">
+
+<div id="gamerulesinnerdiv">
+<h1>Game rules </h1>
+
+<p>
+
+<!-- Display the most important steps in an ordered list -->
+
+<ol>
+
+<li class="gamerulesli">Rollo</li>
+<li class="gamerulesli">Juegos</li>
+<li class="gamerulesli">Visite el mono</li>
+<li class="gamerulesli">Intercambio Plátanos contre dineihro</li>
+
+</ol>
+</p>
+
+<p>
+<h2>Con los niveles de efectivo pueden ser desbloqueados</h2>
+</p>
+
+<p>
+<button class="gamerulesbutton" onclick="backfromgamerules()">Espalda</button>
+</p>
+</div>
+
+</div>
+
+<!--=========================================
+Div that displays the results
+===========================================-->
+<div id="minigameresultdiv">
+
+<div class="minigameresult_header">
+<h1 id="minigameresult_header_h1"></h1>		<!-- This h1 displays Congratulations or What a pitty in Spanish -->
+</div>
+
+<div class="minigameresult_body">
+
+<h2 id="minigameresult_exercisetext"></h2>	<!-- This h2 displays what happened. For example "You answered the question right"-->
+
+<br />
+
+<h1 id="maingameresultdiv_bananatext"></h1>	<!-- This h1 displays if you win or lose the banans -->	
+<img id="minigameresultdiv_image" src="./images/bananas.png" width="80px" height="80px"></img>
+
+<br />
+<br />
+<br />
+
+<button class="minigameresultdiv_button" onclick="minigameresult_button_ok_clicked()">Ok</button>
+
+</div>
+
+</div>
+
+<!--===========================================================================
+Div that shows the result at the end
+==========================================================================-->
+<div id="adventuregame_endresultdiv">
+
+<div class="adventuregame_endresultdiv_header">
+<h1 class="adventuregame_endresultdiv_header_h1">El juego ha terminado</h1>
+</div>
+
+<!-- This div is only displayed if there is a new record -->
+<div id="endresultdiv_newrecorddiv">
+<h1 id="endresultdiv_newrecord">Nuevo Record</h1>
+</div>
+
+<div class="adventuregame_endresultdiv_body">
+
+<table class="adventuregame_endresultdiv_table">
+
+<!-- Titel for the first column - Results of this round -->
+<tr>
+<td class="adventuregame_tr_title"><h1>Estanda Ronda</h1>
+</td>
+
+<!-- Titel for the second column - Result of the record round -->
+<td class="adventuregame_tr_title"><h1>Record</h1>
+</td>
+
+</tr>
+
+<tr>
+
+<!-- This column displays the correct answers, wrong answers and the total of the played round -->
+<td class="adventuregame_endresultdiv_table_td">
+	<h1 id="adventuregame_endresultdiv_actual_correct">Respuestas correctas: 1</h1>
+	<h1 id="adventuregame_endresultdiv_actual_false">Respuestas incorrectas : 2</h1>
+	<h1 id="adventuregame_endresultdiv_actual_total">Total = + 2</h1>
+</td>
+
+<!-- This column displays the correct answers, wrong answers and the total of the record round -->
+<td class="adventuregame_endresultdiv_table_td">
+	<h1 id="adventuregame_endresultdiv_record_correct">Record correctas: 1</h1>
+	<h1 id="adventuregame_endresultdiv_record_false">Record incorrectas : 2</h1>
+	<h1 id="adventuregame_endresultdiv_record_total">Total = + 2</h1>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="adventuregame_endresultdiv_button">
+
+<button class="adventuregame_endresultbutton" onclick="endresultscreen_continue_clicked()">Continuar</button>
+
+</div>
+
+</div>
+
+</body>
+<!-- ==================================
+	End of the body
+====================================-->
+
+<!--------------------------------------------------------------------------------
+	Script that is executed at the beginning
+--------------------------------------------------------------------------------->
+
+<script type="text/javascript">
+
+hide();		/*Important!! We have a single page application. Thanks to this method 
+		  we hide the elements we don't use at the beginning of the application.
+ 		  This method is located in the mainscript*/
+
+nextsvg_drawselections();	/*This code draws the elements of the "What is next" game.
+				  this code is executed here as it only needs to be executed once 
+				  You can find this method in the nextgame.js*/
+
+
+initialise_levels_selectionsscreen();	/* This method initialises the level screen. It reads the score - 
+					the HTML 5 local storage. You can find this method in the selectionscreen.js*/
+
+/*-------------------------------------------------------------------------------------------------------------
+This is the part that is responsible for all the sound elements*/
+
+//===============================================
+//Variables for the sounds
+//===============================================
+var sound_intromusic;
+var sound_backgroundmusic_level1;
+var sound_buttonclicked;
+var sound_diceroll;
+var sound_blop;
+var sound_golfsound;
+var sound_bananaup;
+var sound_bananalost;
+var sound_background_krokogame;
+var sound_fishbutton;
+var sound_background2;
+var sound_pencil;
+var sound_woosh;
+var sound_castlebackground;
+var sound_bomb;
+var sound_gunshoot;
+var sound_monkey;
+var sound_monkeybackground;
+var sound_tigerbackground1;
+var sound_tigerbackground2;
+var sound_tigerlaugh;
+var sound_introeffect;
+var sound_level3;
+var sound_level2;
+var sound_moneysound;
+var sound_newlevel;
+
+//===============================================
+//Setting the sources of the audiobackgroundsound_level2
+//===============================================
+sound_backgroundmusic_level1 = new Audio('./sounds/mario.ogg');
+sound_level2 = new Audio('./sounds/backgroundsound_level2.ogg');
+sound_level3 = new Audio('./sounds/background_level3.ogg');
+sound_intromusic = new Audio('./sounds/introsound.ogg'); 
+sound_buttonclicked = new Audio('./sounds/button_click.ogg');
+sound_diceroll = new Audio('./sounds/rolldice.ogg');
+sound_blop = new Audio('./sounds/blop.ogg');
+sound_golfsound = new Audio('./sounds/golf.ogg');
+sound_bananaup = new Audio('./sounds/bananup.ogg');
+sound_bananalost = new Audio('./sounds/bananalost.ogg');
+sound_background_krokogame = new Audio('./sounds/background_krokogame.ogg');
+sound_fishbutton = new Audio('./sounds/fish_button.ogg');
+sound_background2 = new Audio('./sounds/background2.ogg');
+sound_pencil = new Audio('./sounds/pencil.ogg');
+sound_woosh = new Audio('./sounds/woosh.ogg');
+sound_castlebackground = new Audio('./sounds/castlebackground.ogg');
+sound_bomb = new Audio('./sounds/bomb.ogg');
+sound_gunshoot = new Audio('./sounds/gunshoot.ogg');
+sound_monkey = new Audio('./sounds/monkey.ogg');
+sound_monkeybackground = new Audio('./sounds/monkeybackground.ogg');
+sound_tigerbackground1 = new Audio('./sounds/tigerbackground1.ogg');
+sound_tigerbackground2 = new Audio('./sounds/tigerbackground2.ogg');
+sound_tigerlaugh = new Audio('./sounds/tigerlaugh.ogg');
+sound_introeffect = new Audio('./sounds/introeffect.ogg');
+sound_moneysound = new Audio('./sounds/moneysound.ogg');
+sound_newlevel = new Audio('./sounds/newlevel.ogg');
+
+/*=======================================================
+Adding the event listener to the different sounds.
+The event listener recognizes when a song is finished
+and plays it again. Due to performance reasons I cutted 
+the sound at a point where it sounds good if it starts again. 
+=======================================================*/
+sound_backgroundmusic_level1.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_level2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+
+sound_level3.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_intromusic.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+
+sound_background_krokogame.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_background2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_monkeybackground.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_castlebackground.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_tigerbackground1.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+sound_tigerbackground2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+
+//-------------------------------------------------------------------------
+
+/*=============================================================
+		Here begins the JQuery part
+==============================================================*/
+
+//Make the cheeseimages and the appleimages draggable
+
+$(function() {
+    $( "#cheeseimage1" ).draggable();
+    $( "#cheeseimage2" ).draggable();
+    $( "#cheeseimage3" ).draggable();
+    $( ".appleimages" ).draggable();
+
+
+//Reset the apple images back to the original position if they are not dropped on a table (droppable)
+
+$(".appleimages").draggable({
+        revert : function(event, ui) {
+            $(this).data("uiDraggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            // return boolean
+            return !event;
+        }
+    });
+
+//Reset the cheese images back to the original position if they are not dropped on a droppable
+$("#cheeseimage1").draggable({
+        revert : function(event, ui) {
+            
+            $(this).data("uiDraggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            // return boolean
+            return !event;
+        }
+    });
+
+$("#cheeseimage2").draggable({
+        revert : function(event, ui) {
+            $(this).data("uiDraggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            // return boolean
+            return !event;
+        }
+    });
+
+$("#cheeseimage3").draggable({
+        revert : function(event, ui) {
+            $(this).data("uiDraggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            // return boolean
+            return !event;
+        }
+    });
+
+//-------------------------------------------
+
+/*Make the plates in the sharegame droppable elements. 
+  The reason that they are defined with an id not a class and each one is listed
+  is because theres always another method that needs to be called*/
+
+$( "#dropapples1" ).droppable({
+      drop: function( event, ui ) {
+	var draggable = ui.draggable;
+    	var id = draggable.attr("id");
+        apple_on_plate1();
+      }
+    });
+
+$( "#dropapples2" ).droppable({
+      drop: function( event, ui ) {
+	var draggable = ui.draggable;
+    	var id = draggable.attr("id");
+        apple_on_plate2();
+      }
+    });
+
+$( "#dropapples3" ).droppable({
+      drop: function( event, ui ) {
+	var draggable = ui.draggable;
+    	var id = draggable.attr("id");
+        apple_on_plate3();
+      }
+    });
+
+$( "#dropapples4" ).droppable({
+      drop: function( event, ui ) {
+	var draggable = ui.draggable;
+    	var id = draggable.attr("id");
+        apple_on_plate4();
+      }
+    });
+
+
+//Function that sets the element where you can drop the cheese
+$( "#dropcheese" ).droppable({
+      drop: function( event, ui ) {
+	var draggable = ui.draggable;
+    	var id = draggable.attr("id");
+        dropped(id);
+      }
+    });
+});
+
+//------------------------------------------------------------------------
+
+//Make the elments sortable - used for the sortgame
+$(function() {
+    $( "#sortable" ).sortable({
+	change: function( event, ui ) {sound_woosh.play()}
+});
+    $( "#sortable" ).disableSelection();
+});
+
+//-----------------------------------------------------------
+// Function for the new level div
+
+$(function() {
+    $( "#newleveldiv" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "blind",
+        duration: 1000
+      },
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  });
+
+//-------------------------------------------------------
+//Make the elments selectable - used for the wallgame
+$(function() {
+    $( "#selectable1" ).selectable({
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable1 li" ).index( this );
+
+	  liselected(true, index);
+        });
+      }
+    });
+  });
+
+$(function() {
+    $( "#selectable2" ).selectable({
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable2 li" ).index( this );
+          liselected(false, index);
+        });
+      }
+    });
+  });
+
+//---------------------------------------------------------------
+//Code for the progress bar
+$(function() {
+    var progressbar = $( "#progressbar" ),
+      progressLabel = $( ".progress-label" );
+ 
+    progressbar.progressbar({
+      value: false,
+      change: function() {
+        progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+      },
+      complete: function() {
+        //progressLabel.text( "Complete!" );
+	$("#progress_buttondiv").show();
+      }
+    });
+ 
+    function progress() {
+      var val = progressbar.progressbar( "value" ) || 0;
+ 
+      progressbar.progressbar( "value", val + 2 );
+ 
+      if ( val < 99 ) {
+        setTimeout( progress, 200 );
+      }
+    }
+ 
+    setTimeout( progress, 2000 );
+  });
+
+//-----------------------------------------------
+//This is the code that makes a div with the help of JQuery Knob a circle 
+$(function() {
+    $(".dial").knob();
+});
+
+
+</script>	<!-- End script -->
+</html>

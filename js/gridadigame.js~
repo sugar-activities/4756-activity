@@ -1,0 +1,156 @@
+var gridadi_solutiontable;
+var gridadi_correct = false;
+
+/*====================================
+Function that initialises the grid adi game
+=====================================*/
+
+function initialise_grid_adi_game(){
+
+$("#gridadibutton").hide();	//Hide the continuebutton
+
+var number1 = Math.floor(Math.random() * 100) + 1;
+var number2 = 100 - 1;
+
+document.getElementById("adi_text_first").innerHTML = number1;
+document.getElementById("adi_text_second").innerHTML = "_ _";
+
+//Remove all the elements from the Grid table
+$('#gridaditable1 tr').remove();
+$('#gridaditable2 tr').remove();
+$('#gridaditable3 tr').remove();
+
+
+//Code for the creation of the tr's and td's
+//=======================================================
+
+for(var i = 1; i<=3; i++){	//For loop for the three tables
+var table = document.getElementById("gridaditable" + i);	//Get the table
+
+for(var j = 0; j<10; j++){	//Second for loop for the rows
+var tr = document.createElement("tr");	//Get the row
+
+for(var k = 0; k <10; k++){	//Third for loop for the columns
+var td = document.createElement("td");	//Create a td element
+td.setAttribute("class", "gridaditd");	
+td.setAttribute("id", i + "_" + (j*10 + k));	//Set an id. This id allows to color the fields later on
+td.style.backgroundColor = "white";            
+tr.appendChild(td);		//Append the td
+}
+
+table.appendChild(tr);
+}
+}
+//=========================================================
+//Code that colors the fields
+gridadi_solutiontable = Math.floor(Math.random() * 3) + 1;
+
+var different = true;	//Used to make sure that all three tables are different
+
+do{
+
+var randomnumber1 = Math.floor(Math.random() * 100) + 1;
+var randomnumber2 = Math.floor(Math.random() * 100) + 1;
+var randomnumber3 = Math.floor(Math.random() * 100) + 1;
+
+if(randomnumber1 == number1 || randomnumber2 == number1){	//Check if the elements are different
+ different = false;
+}
+
+}
+while(different == false);
+
+//Clorize grid one
+for(var i = 0; i< 100; i++){
+
+if(gridadi_solutiontable == 1){
+   if(i == number1){
+   document.getElementById("gridaditable1").setAttribute("blues", number1);	
+   break;
+   }
+}
+else
+{
+if(i == randomnumber1){
+   document.getElementById("gridaditable1").setAttribute("blues", randomnumber1);
+   break;
+}
+}
+
+document.getElementById("1_" + i).style.backgroundColor = "blue";
+
+}
+
+//Clorize grid two
+for(var i = 0; i< 100; i++){
+
+if(gridadi_solutiontable == 2){
+   if(i == number1){
+   document.getElementById("gridaditable2").setAttribute("blues", number1);
+   break;
+   }
+}
+else
+{
+if(i == randomnumber2){
+   document.getElementById("gridaditable2").setAttribute("blues", randomnumber2);
+   break;
+}
+}
+
+document.getElementById("2_" + i).style.backgroundColor = "blue";
+
+}
+
+//Colorize grid three
+for(var i = 0; i< 100; i++){
+
+if(gridadi_solutiontable == 3){
+   if(i == number1){
+   document.getElementById("gridaditable3").setAttribute("blues", number1);
+   break;
+   }
+}
+else
+{
+if(i == randomnumber3){
+document.getElementById("gridaditable3").setAttribute("blues", randomnumber3);
+   break;
+}
+}
+
+document.getElementById("3_" + i).style.backgroundColor = "blue";
+
+}
+
+}
+
+/*======================================
+Function that is called if a table is clicked
+======================================*/
+function gridadi_table_clicked($id, $blues){
+
+document.getElementById("adi_text_second").innerHTML = 100-$blues;
+
+if($id.indexOf(gridadi_solutiontable) > -1){
+$( "#" + $id ).effect( "highlight" );	//Higlight the table if the answer is correct
+gridadi_correct = true;
+}
+else{
+$( "#" + $id ).effect( "shake" );
+gridadi_correct = false;		//Shake the table if the answer is wrong
+}
+$("#gridadibutton").show();
+}
+
+/*======================================
+Function that is called if the continue button is clicked
+========================================*/
+function gridadi_continue(){
+
+sound_buttonclicked.play();
+
+//Call the function from the main script
+checkgreenyellowfields(gridadi_correct);	//Call the checkgreenyellowfields located in the mainscript.js
+
+}

@@ -1,0 +1,1862 @@
+/* Those styles are only used if the toolbar is displayed*/
+
+/*
+#main-toolbar #activity-button {
+  background-image: url(../activity/activity-icon.svg);
+}
+
+#main-toolbar #sources-button {
+  background-image: url(../activity/activity-icon.svg);
+}
+*/
+
+/*================================================
+Styles for Shopactivities
+================================================*/
+#shopdiv{
+  background-color:white;
+  overflow:hidden;
+  width: 1200px;
+}
+
+.shopprice{
+  font-size: 50px;
+  font-family: "Chalkboard";
+  color:white;
+
+}
+
+#cartlist{
+  width: 500px;
+  background-color: white;
+  font-size: 20px;
+}
+
+#item21{
+  font-weight: bold;
+}
+
+#price21{
+  font-weight: bold;
+}
+
+.shopimage{
+  padding:15px;
+}
+
+#shoptable{  
+  width:1200px;
+  height:750px;
+  background-image: linear-gradient(to bottom right, #FFFFFF 0%, #EF8E0E 100%);
+}
+
+.shopbuttons{
+  width: 300px;
+  height: 100px;
+  background-color:white;
+  color:black;
+  font-size: 40px;
+  padding:20px;
+
+  background: #dbe82c;
+  background-image: -webkit-linear-gradient(top, #dbe82c, #c3cf1f);
+  background-image: -moz-linear-gradient(top, #dbe82c, #c3cf1f);
+  background-image: -ms-linear-gradient(top, #dbe82c, #c3cf1f);
+  background-image: -o-linear-gradient(top, #dbe82c, #c3cf1f);
+  background-image: linear-gradient(to bottom, #dbe82c, #c3cf1f);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+.shopbuttons:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.shopitems{
+  width:400px;
+  margin-left:50px;
+  border: 1px solid black;
+  background-color:light-brown;
+  background-image: url(../images/Shop/wood.jpg);
+  background-repeat: no-repeat;
+  background-size: 400px 700px;
+}
+
+.buttonrow{
+  background:transparent;
+}
+
+/*================================================
+Styles for Kroko Game
+================================================*/
+.krokobuttons{
+  width:380px;
+  height:80px;
+  font-size:50px;
+  font-style: bold;
+  
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+
+}
+
+.krokbuttonrow{
+  width:1200px;
+  height:90px;
+
+}
+
+.continuediv{
+  position:absolute;
+  left:10px;
+  top: 700px;
+}
+
+#krokotable{
+  width:1200px;
+  height:100px;
+}
+
+#krokodiv{
+  
+  width: 1200px;
+  background-color: aqua;
+  height:820px;
+  overflow:hidden;
+}
+
+
+#krokocontinue{
+  margin-left:490px;
+  margin-top: 0px;
+  width:200px;
+  height:60px;
+  background-color:lightgreen;
+
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+  text-align:center;
+}
+
+/*================================================
+Styles for Form Game
+================================================*/
+#formgame{
+  overflow: hidden; 
+}
+
+#formssvg{
+  background-color:white;
+}
+
+#formentries{
+  width:600px;
+  height:750px;
+}
+
+.formtd1{
+  font-size:30px;
+}
+
+.forminput{
+  height:50px;
+  font-size:20px;
+  text-align:center;
+}
+
+.formbutton{
+  height:80px;
+  font-size:20px;
+  width:200px;
+
+  background: #adbab5;
+  background-image: -webkit-linear-gradient(top, #adbab5, #e6e6df);
+  background-image: -moz-linear-gradient(top, #adbab5, #e6e6df);
+  background-image: -ms-linear-gradient(top, #adbab5, #e6e6df);
+  background-image: -o-linear-gradient(top, #adbab5, #e6e6df);
+  background-image: linear-gradient(to bottom, #adbab5, #e6e6df);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #000000;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+.formbutton:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+/*================================================
+Styles for the Endresultgame
+================================================*/
+#endresultgame{
+  width: 1200px;
+  height:820px;
+  background-color: lightsteelblue;
+  overflow:hidden;
+}
+
+.numbers{
+  font-size:60px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family:Comic Sans MS;
+}
+
+.endgameinputs{
+  width:20px;
+  font-size:30px;
+}
+
+.endgamebuttons{
+  width: 150px;
+  height:80px;
+  font-size:20px;
+
+  background: #b836eb;
+  background-image: -webkit-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -moz-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -ms-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -o-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: linear-gradient(to bottom, #b836eb, #ac83c4);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+.endgamebuttons:hover{
+  background: #fa3c45;
+  background-image: -webkit-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -moz-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -ms-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -o-linear-gradient(top, #fa3c45, #d93463);
+  background-image: linear-gradient(to bottom, #fa3c45, #d93463);
+  text-decoration: none;
+}
+
+/*================================================
+Styles for the Endresultgame
+================================================*/
+#nextgamesvg{
+  background-color:white;
+}
+
+#nextselectsvg{
+  background-color:white;
+}
+
+.whatisnext_correct_div{
+  position: absolute;
+  left: 50px;
+  top: 770px;
+}
+
+.whatisnext_correct_button{
+  width: 150px;
+  height:80px;
+  font-size:20px;
+
+  background: #b836eb;
+  background-image: -webkit-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -moz-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -ms-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: -o-linear-gradient(top, #b836eb, #ac83c4);
+  background-image: linear-gradient(to bottom, #b836eb, #ac83c4);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+.whatisnext_correct_button:hover{
+  background: #fa3c45;
+  background-image: -webkit-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -moz-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -ms-linear-gradient(top, #fa3c45, #d93463);
+  background-image: -o-linear-gradient(top, #fa3c45, #d93463);
+  background-image: linear-gradient(to bottom, #fa3c45, #d93463);
+  text-decoration: none;
+}
+
+/*================================================
+Styles for the cheesegame
+===============================================*/
+#cheesegame {
+    width:1200px;
+    height:820px;
+}
+
+.cheese_h1{
+  color: white;
+}
+
+.centered {
+
+  border: solid;
+  float:left;
+  height: 820px;
+  width:900px;
+  background-color: brown;
+}
+
+.sidebar {
+  float:left;
+  width:280px;
+  height:820px;
+  margin-right:-100px;
+  background-color: yellow;
+}
+
+.cheeseimages{
+  width:200px;
+  height: 200px;
+}
+
+.cheeseexercise{
+  width:250px;
+  height:400px;
+}
+
+.cheesetext{
+  font-size:100px;
+}
+
+.cheesebreak{
+  font-size:50px;
+  text-align:center;
+}
+
+.cheesebuttonrow {
+  text-align:center;
+  width:900px;
+}
+
+#cheesebutton{
+  width:150px;
+  height:80px;
+  font-size:20px;
+
+  background: #9e4b03;
+  background-image: -webkit-linear-gradient(top, #9e4b03, #523509);
+  background-image: -moz-linear-gradient(top, #9e4b03, #523509);
+  background-image: -ms-linear-gradient(top, #9e4b03, #523509);
+  background-image: -o-linear-gradient(top, #9e4b03, #523509);
+  background-image: linear-gradient(to bottom, #9e4b03, #523509);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+#cheesebutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+
+/*================================================
+Styles for the ten game 
+===============================================*/
+#tengame{
+ width:1200px;
+ height:820px;
+ background-color: white;
+ overflow:hidden;
+}
+
+
+.tengamenumber{
+  font-size: 100px;
+  color: #222;
+  text-shadow: 0px 2px 3px #555;
+}
+
+.tennumber{
+  font-size:100px;
+  color:blue;
+}
+
+.tenbutton{
+  width:80px;
+  height:80px;
+  font-size:40px;
+}
+
+#continuetenbutton{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#tencontinue{
+  margin-left:20px;
+  width: 200px;
+  height:100px;
+  font-size:30px;
+
+  background: #a290eb;
+  background-image: -webkit-linear-gradient(top, #a290eb, #1956cf);
+  background-image: -moz-linear-gradient(top, #a290eb, #1956cf);
+  background-image: -ms-linear-gradient(top, #a290eb, #1956cf);
+  background-image: -o-linear-gradient(top, #a290eb, #1956cf);
+  background-image: linear-gradient(to bottom, #a290eb, #1956cf);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+#tencontinue:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*================================================
+Styles for the Division game
+===============================================*/
+#divisiongame{ 
+  width:1200px; 
+  height:820px;
+  background-color:ivory;
+}
+
+#divisionheader {
+ background-color:lightcyan; 
+ font-size:40px; 
+ text-align:center; 
+}
+
+#divisionmain {
+  width:950px;
+  height:600px;
+}
+
+#divisionsidebar { 
+  float:left; 
+  width:250px; 
+  background-color:lightcyan; 
+  min-height:700px; 
+}
+
+.animals{
+  width:150px;
+  height:150px;
+}
+
+#sortable { 
+  list-style-type: none;
+  padding:100;
+  width: 60%; 
+}
+
+.divisionli{
+  margin-left:100px;
+  margin-top:20px;
+  background-color: lightcyan;
+  font-size: 50px;
+  width: 1000px;
+}
+
+.divisioncontrolbutton{
+
+  width: 200px;
+  height:100px;
+  font-size:30px;
+  margin-left:300px;
+
+  background: #fafafa;
+  background-image: -webkit-linear-gradient(top, #fafafa, #ffffff);
+  background-image: -moz-linear-gradient(top, #fafafa, #ffffff);
+  background-image: -ms-linear-gradient(top, #fafafa, #ffffff);
+  background-image: -o-linear-gradient(top, #fafafa, #ffffff);
+  background-image: linear-gradient(to bottom, #fafafa, #ffffff);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+  text-decoration: none;
+  color:black;
+}
+
+.divisioncontrolbutton:hover{
+  background: #7ceb96;
+  background-image: -webkit-linear-gradient(top, #7ceb96, #059c4b);
+  background-image: -moz-linear-gradient(top, #7ceb96, #059c4b);
+  background-image: -ms-linear-gradient(top, #7ceb96, #059c4b);
+  background-image: -o-linear-gradient(top, #7ceb96, #059c4b);
+  background-image: linear-gradient(to bottom, #7ceb96, #059c4b);
+}
+
+/*================================================
+Styles for the selection screen
+===============================================*/
+.selectiontable{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.selectiondiv{
+  margin-left:480px;
+}
+
+.roundbutton {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border-style: solid;
+  border-color: black;
+}
+
+.roundbutton:hover {
+  background: #f6fc3c;
+  background-image: -webkit-linear-gradient(top, #f6fc3c, #c0d934);
+  background-image: -moz-linear-gradient(top, #f6fc3c, #c0d934);
+  background-image: -ms-linear-gradient(top, #f6fc3c, #c0d934);
+  background-image: -o-linear-gradient(top, #f6fc3c, #c0d934);
+  background-image: linear-gradient(to bottom, #f6fc3c, #c0d934);
+  text-decoration: none;
+  color: black;
+}
+
+.sourcelink_div{
+  position: absolute;
+  left: 800px;
+  top: 800px;
+}
+
+.sourcelink{
+  font-size: 20px;
+}
+
+.sourcelink:hover{
+  color:black;
+}
+
+.selectionitem{
+  background-color:white;
+}
+
+.selectionitem:hover{
+  background-color:palegoldenrod;
+}
+
+#levelimage1{
+ background-image: url(../images/Background_gray.png);
+ width: 300px;
+ height:200px;
+ background-size:100%;
+}
+
+#levelimage2{
+ background-image: url(../images/Background-Level2_gray.png);
+ width:300px;
+ height:200px;
+ background-size:100%;
+}
+
+#levelimage3{
+ background-image: url(../images/Background-Level3_gray.png);
+ width:300px;
+ height:200px;
+ background-size:100%;
+}
+
+#levelimage1:hover{
+ background-image: url(../images/Background.png);
+ width:300px;
+ height: 200px;
+}
+
+#levelimage2:hover{
+ background-image: url(../images/Background-Level2.png);
+ width:300px;
+ height: 200px;
+}
+
+#levelimage3:hover{
+ background-image: url(../images/Background-Level3.png);
+ width:300px;
+ height: 200px;
+}
+
+#caracterselection{
+ width:1200px;
+ height:820px;
+ background-color:lightyellow;
+ overflow:hidden;
+}
+
+#selectioncontinuebutton{
+  width:250px;
+  height:80px;
+  font-size:30px;
+  margin-top:50px;
+
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#selectioncontinuebutton:hover{
+  background: #3cfc53;
+  background-image: -webkit-linear-gradient(top, #3cfc53, #34d96e);
+  background-image: -moz-linear-gradient(top, #3cfc53, #34d96e);
+  background-image: -ms-linear-gradient(top, #3cfc53, #34d96e);
+  background-image: -o-linear-gradient(top, #3cfc53, #34d96e);
+  background-image: linear-gradient(to bottom, #3cfc53, #34d96e);
+  text-decoration: none;
+}
+
+.leveltext{
+  font-size:20px;
+}
+
+/*================================================
+Styles for the banana delivery screen
+===============================================*/
+#bananadelivery{
+  width:1200px;
+  height:820px;
+}
+
+#bananadelivery_elements{
+  position:absolute;
+  left: 100px;
+  top: 80px;
+  width: 450px;
+  height: 500px;
+  margin: 5px;
+  background-image: url(../images/bubble.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+
+#bananadelivery_speechbubble{
+  margin-left: 80px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.deliverybuttons{
+  width: 200px;
+  height:150px;
+  font-size: 50px;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  margin-top: 280px;
+  margin-left: 10px;
+}
+
+.deliverybuttons:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*================================================
+Styles for the sliders
+===============================================*/
+#slidergame{
+  background-color:aliceblue;
+  width:1200px;
+  height:820px;
+  margin-top:0px;
+  overflow:hidden;
+}
+
+.sliderdiv{
+  margin-left:20px;
+  margin-top:20px;
+}
+
+.sliders{
+
+  width:1000px;
+  height:200px;
+  color: blue;
+
+}
+
+.slidergamebutton{
+  width:150px;
+  height:80px;
+  font-size: 20px;
+
+  background: #7cc0ed;
+  background-image: -webkit-linear-gradient(top, #7cc0ed, #2980b9);
+  background-image: -moz-linear-gradient(top, #7cc0ed, #2980b9);
+  background-image: -ms-linear-gradient(top, #7cc0ed, #2980b9);
+  background-image: -o-linear-gradient(top, #7cc0ed, #2980b9);
+  background-image: linear-gradient(to bottom, #7cc0ed, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #01080d 2px;
+  text-decoration: none;
+
+}
+
+.slidergamebutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*================================================
+Styles for the wall game
+===============================================*/
+#wallgame{
+  background-image: url(../images/selectiongame/Walls.png);
+  width: 1200px;
+  height: 800px;
+}
+
+.wallgameli{
+  background-color:gainsboro;
+  width:300px;
+  height: 200px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.wallgametable{
+  width: 600px;
+  height:600px;
+  margin-left: 400px;
+}
+
+.wallgametablediv{
+  position:absolute;
+  left: 100px;
+  top: 280px;
+}
+
+#wallgame_display{
+  position:absolute;
+  left: 700px;
+  top: 100px;
+  background-color:white;
+  border-style:solid;
+  border-color: gray;
+  padding: 10px;
+}
+
+
+#selectable1 .ui-selecting, #selectable2 .ui-selecting {
+  background: #FECA40; 
+}
+
+#selectable1 .ui-selected, #selectable2 .ui-selected { 
+  background: #F39814;
+  color: white; 
+}
+
+#selectable1, #selectable2 { 
+  list-style-type: none;
+  margin: 0; 
+  padding: 0; 
+  width: 60%; 
+}
+
+#selectable1 li, #selectable2 li { 
+  margin: 3px;
+  padding: 0.4em;
+  font-size: 1.4em;
+  height: 50px; 
+}
+
+/*================================================
+Styles for the endround
+===============================================*/
+#endofround{
+  width: 1200px;
+  height:820px;
+  background-image: url(../images/endofround/Round.png);
+}
+
+.endofroundbutton{
+  margin-left:700px;
+  margin-top:500px;
+  width: 250px;
+  height: 150px;
+  font-size:50px;
+	
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+.endofroundbutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+
+/*================================================
+Styles for the dialogs
+===============================================*/
+.dialog{
+  background-color: white;
+  font-size: 20px;
+}
+
+/*================================================
+Styles for the Circlegame
+===============================================*/
+.circlegametable{
+  width: 1000px;
+  height: 600px;
+  margin-left: 50px;
+}
+
+#circlegame{
+  width: 1200px;
+  height:820px;
+  background-color: darkturquoise;
+  overflow:hidden;
+}
+
+.circlegamebutton{
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  margin-left: 50px;
+  color:black;
+
+  background: #6af573;
+  background-image: -webkit-linear-gradient(top, #6af573, #3cf075);
+  background-image: -moz-linear-gradient(top, #6af573, #3cf075);
+  background-image: -ms-linear-gradient(top, #6af573, #3cf075);
+  background-image: -o-linear-gradient(top, #6af573, #3cf075);
+  background-image: linear-gradient(to bottom, #6af573, #3cf075);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  padding: 10px 20px 10px 20px;
+  border: solid #01080d 2px;
+  text-decoration: none;
+}
+
+.circlegamebutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+.circlegameh1{
+  margin-left: 50px;
+}
+
+
+/*================================================
+Styles for the MultiplikationTable Game
+===============================================*/
+
+#multiplikationtable{
+  width: 1100px;
+  height: 600px;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.multiplikation_table_data{
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  height: 150px;
+  width:240px;
+  text-align: center;
+}
+
+.math_table_input{
+  height: 100px;
+  width: 100px;
+  font-size: 30px;
+  text-align:center;
+}
+
+.multiplikationtablebutton{
+  background: #39f0e7;
+  background-image: -webkit-linear-gradient(top, #39f0e7, #46d9cd);
+  background-image: -moz-linear-gradient(top, #39f0e7, #46d9cd);
+  background-image: -ms-linear-gradient(top, #39f0e7, #46d9cd);
+  background-image: -o-linear-gradient(top, #39f0e7, #46d9cd);
+  background-image: linear-gradient(to bottom, #39f0e7, #46d9cd);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #01080d 2px;
+  text-decoration: none;
+}
+
+.multiplikationtablebutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+
+/*================================================
+Styles for the Grid additiontable game
+===============================================*/
+.gridaditable{
+  width:200px;
+  height:200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.gridaditcontainertable{
+  margin-left: 50px;
+}
+
+.gridaditdcontainer{
+  width:400px;
+  height: 400px;
+}
+
+.gridaditd{
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+}
+
+.gridaditext{
+  font-size: 50px;
+}
+
+.gridaditexttable{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#gridadibutton{
+  width: 300px;
+  height: 100px;
+  font-size: 30px;
+  margin-left: 450px;
+  margin-top: 100px;
+
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+#gridadibutton:hover{
+
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+
+}
+
+#gridaddition{
+  width: 1200px;
+  height: 820px;
+  background-color:lemonchiffon;
+  overflow: hidden;
+}
+
+/*================================================
+Styles for the sharing game
+===============================================*/
+#sharinggame{
+  width: 1200px;
+  height: 820px;
+  overflow: hidden;
+  background-color: lightgreen;
+}
+
+.share_item_table{
+  width: 1200px;
+  height: 300px;
+}
+
+.appleimages{
+  width: 100px;
+  height: 100px;
+}
+
+.drop_apples{
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+  background-image: url(../images/sharegame/plate.png);
+  background-repeat: no-repeat;
+}
+
+.drop_apples_table{
+  width: 1200px;
+  height: 300px;
+  background-color: white;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.sharegamebuttons{
+  width: 200px;
+  height: 80px;
+  font-size: 30px;
+  color:black;
+
+  background: #6af573;
+  background-image: -webkit-linear-gradient(top, #6af573, #3cf075);
+  background-image: -moz-linear-gradient(top, #6af573, #3cf075);
+  background-image: -ms-linear-gradient(top, #6af573, #3cf075);
+  background-image: -o-linear-gradient(top, #6af573, #3cf075);
+  background-image: linear-gradient(to bottom, #6af573, #3cf075);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  padding: 10px 20px 10px 20px;
+  border: solid #01080d 2px;
+  text-decoration: none;
+}
+
+.sharegamebuttons:hover{
+
+  background: #f7feff;
+  background-image: -webkit-linear-gradient(top, #f7feff, #f7fffe);
+  background-image: -moz-linear-gradient(top, #f7feff, #f7fffe);
+  background-image: -ms-linear-gradient(top, #f7feff, #f7fffe);
+  background-image: -o-linear-gradient(top, #f7feff, #f7fffe);
+  background-image: linear-gradient(to bottom, #f7feff, #f7fffe);
+  text-decoration: none;
+
+}
+
+.share_button_table{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+/*================================================
+Styles for the memory game
+===============================================*/
+#memorygame{
+  width: 1200px;
+  height: 820px;
+  background-color: mintcream;
+  overflow:hidden;
+}
+
+#memorygametable{
+  width: 700px;
+  height: 700px;
+  border-style: solid;
+  table-layout:fixed;
+  margin-left: 50px;
+  overflow:hidden;
+}
+
+.memorygame_table_row{
+  height: 175px;
+}
+
+.memorygame_td{
+  border-style: solid;
+  font-size: 25px;
+  text-align: center;
+  overflow: hidden;
+  background-image: url(../images/memorygame/memorycard_frontside.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#memorygame_display{
+  position:absolute;
+  left: 785px;
+  top: 50px;
+}
+
+.memorygame_display_p{
+  border-style: solid;
+  border-color: gray;
+  padding: 10px;
+}
+
+/*================================================
+Styles for the castle game
+===============================================*/
+
+
+.block{
+  position: absolute;
+  left: 310px;
+  top: 650px;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.fireball{
+  position: absolute;
+  left: 950px;
+  top: 100px;
+  margin: 5px;
+}
+
+.fireball_player1{
+  position: absolute;
+  left: 170px;
+  top: 450px;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.fireball_player2{
+  position: absolute;
+  left: 410px;
+  top: 450px;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.fireball_player3{
+  position: absolute;
+  left: 650px;
+  top: 450px;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.castle_result_paper{
+  position: absolute;
+  left: 575px;
+  top: 100px;
+  width: 150px;
+  height: 100px;
+  background-image: url(../images/castlegame/paper.png);
+  background-size:80%;
+  background-repeat: no-repeat;
+}
+
+#paperh1{
+  margin-left:40px;
+  margin-top:40px;
+}
+
+.castlegametablediv{
+  position:absolute;
+  top:450px;
+}
+
+.castlegametable{
+  width: 1200px;
+}
+
+.castlegame_table_data{
+  width: 240px;
+  text-align:center;
+  font-size: 30px;
+}
+
+.castlegame_buttondiv{
+
+  position:absolute;
+  left: 710px;
+  top: 650px;
+}
+
+#castlegame{
+  width: 1200px;
+  height: 820px;
+  background-image: url(../images/castlegame/castle_background.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+#castlediv{
+  position: absolute;
+  left: 950px;
+  top: 100px;
+  margin: 5px;
+}
+
+.castlegame_livedisplay{
+  margin-left: 20px;
+}
+
+
+/*================================================
+Styles for the boss game
+===============================================*/
+
+#bossquiz{
+  width: 1200px;
+  height:800px;
+  background-image: url(../images/quizgame/quizgame_background.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+.quiz_exercise{
+  position:absolute;
+  left: 400px;
+  top: 150px;
+  width: 400px;
+  height: 200px;
+  margin: 5px;
+  text-align:center;
+  background-image: url(../images/quizgame/blackboard.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+#quiz_exercise_h1{
+  margin-top: 40px;
+  color: white;
+  font-size: 50px;
+}
+
+.quiz_ok_button{
+  background: #3d454a;
+  background-image: -webkit-linear-gradient(top, #3d454a, #787d80);
+  background-image: -moz-linear-gradient(top, #3d454a, #787d80);
+  background-image: -ms-linear-gradient(top, #3d454a, #787d80);
+  background-image: -o-linear-gradient(top, #3d454a, #787d80);
+  background-image: linear-gradient(to bottom, #3d454a, #787d80);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+}
+
+.quiz_ok_button:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#quiz_input{
+  width: 150px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.quiz_answerdiv{
+  position:absolute;
+  left: 500px;
+  top: 400px;
+  width: 400px;
+  height: 200px;
+  margin: 5px;
+}
+
+#quizgame_tigeranswer{
+
+  position:absolute;
+  left: 50px;
+  top: 250px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-image: url(../images/quizgame/speech_tiger.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+#quizgame_tuanswer{
+
+  position:absolute;
+  left: 950px;
+  top: 250px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-image: url(../images/quizgame/speech_tu.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+
+.quizgame_answer_h1{
+  font-size: 50px;
+  margin-left: 65px;
+  margin-top: 60px;
+}
+
+#quiz_exercise_responsa_correcta{
+  font-size: 20px;
+  color: white;
+}
+
+#quizgame_tigerpoints{
+  position:absolute;
+  left: 50px;
+  top: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-image: url(../images/quizgame/picture_frame.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+#quizgame_playerpoints{
+  position:absolute;
+  left: 950px;
+  top: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-image: url(../images/quizgame/picture_frame.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+.quizgame_frametext{
+  margin-top: 80px;
+  margin-left: 40px;
+}
+
+
+
+/*================================================
+Styles for the tiger div
+===============================================*/
+#tigerdiv{
+  width: 1200px;
+  height: 820px;
+}
+
+#tigerdiv_elements{
+  position:absolute;
+  left: 400px;
+  top: 80px;
+  width: 450px;
+  height: 500px;
+  margin: 5px;
+  background-image: url(../images/bubble.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+#tigerdiv_speechbubble{
+  margin-left: 80px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+#tigerdiv_okbutton{
+  margin-left: 80px;
+  margin-top: 10px;
+
+  
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+#tigerdiv_okbutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*==================================================
+Styles for the start screen
+=================================================*/
+
+.progress-label {
+  position: absolute;
+  left: 540px;
+  top: 80%;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff;
+  color: white;
+}
+
+#startscreendiv{
+  width: 1200px;
+  height: 820px;
+  background-color: white;
+}
+
+#progress_buttondiv{
+  position: absolute;
+  left: 455px;
+  top: 700px;
+  font-size: 50px;
+}
+
+#progress_button{
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 50px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 300px;
+  height: 100px;
+}
+
+#progress_button:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+#startscreendiv{
+
+  width:1200px;
+  height: 820px;
+  background-image: url(../images/Startscreen.png);
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+.startscreen_gamegoal{
+  position: absolute;
+  top: 550px;
+  left: 350px;
+}
+
+.startscreen_gamegoal_h1{
+  color:white;
+  text-align:center;
+}
+
+/*==================================================
+Styles for the new level div
+==================================================*/
+
+#newleveldiv{
+ background-color:white;
+}
+/*================================================
+Styles for the game rules
+=================================================*/
+
+#gamerules{
+  overflow:hidden;
+  width: 1200px;
+  height: 820px;
+  background-color: white;
+}
+
+.gamerulesli{
+  font-size:30px;
+  color: gray;
+}
+
+#gamerulesinnerdiv{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.gamerulesbutton{
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 150px;
+  height: 80px;
+}
+
+.gamerulesbutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*==================================================
+Styles for the gameresult div
+==================================================*/
+#minigameresultdiv{
+  background-color: white;
+  height: 820px;
+  width: 1200px;
+}
+
+.minigameresult_header{
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  left: 400px;
+  top: 100px;
+  border-style: solid;
+  border-color: gray;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px; 
+}
+
+.minigameresult_body{
+  width: 600px;
+  height: 500px;  
+  position: absolute;
+  left: 300px;
+  top: 250px;
+  border-style: solid;
+  border-color: gray;
+  text-align: center;
+
+}
+
+#minigameresult_header_h1{
+  font-size: 30px;
+}
+
+.minigameresultdiv_button{
+  width:150px;
+  height:80px;
+  font-size:20px;
+
+  background: #9e4b03;
+  background-image: -webkit-linear-gradient(top, #9e4b03, #523509);
+  background-image: -moz-linear-gradient(top, #9e4b03, #523509);
+  background-image: -ms-linear-gradient(top, #9e4b03, #523509);
+  background-image: -o-linear-gradient(top, #9e4b03, #523509);
+  background-image: linear-gradient(to bottom, #9e4b03, #523509);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+.minigameresultdiv_button:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+#maingameresultdiv_bananatext{
+  font-size: 50px;
+}
+
+/*===============================================================
+Styles for the endresult div
+===============================================================*/
+#adventuregame_endresultdiv{
+
+  width: 1200px;
+  height: 820px;
+  background-color: ivory;
+}
+
+.adventuregame_endresultdiv_header{
+
+  position: absolute;
+  width: 400px;
+  height: 80px;
+  left: 400px;
+  top: 150px;
+  border-top: solid;
+  border-bottom: solid;
+  text-align: center;
+}
+
+.adventuregame_endresultdiv_header_h1{
+  font-size: 30px;
+}
+
+.adventuregame_endresultdiv_body{
+  position:absolute;
+  left: 50px;
+  top: 300px;
+}
+
+.adventuregame_endresultdiv_table{
+  width: 1100px;
+}
+
+#endresultdiv_newrecorddiv{
+  width: 200px;
+  position: absolute;
+  height: 100px;
+  top: 260px;
+  left: 500px;
+  background-color: yellow;
+  text-align: center;
+}
+
+.adventuregame_endresultdiv_table_td{
+  border-style: solid;
+  width: 300px;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.adventuregame_tr_title{
+  text-align: center;
+}
+
+.adventuregame_endresultdiv_button{
+  width: 400px;
+  position: absolute;
+  left: 400px;
+  top: 600px;
+  text-align: center;
+}
+
+.adventuregame_endresultbutton{
+  width:150px;
+  height:80px;
+  font-size:20px;
+
+  background: #9e4b03;
+  background-image: -webkit-linear-gradient(top, #9e4b03, #523509);
+  background-image: -moz-linear-gradient(top, #9e4b03, #523509);
+  background-image: -ms-linear-gradient(top, #9e4b03, #523509);
+  background-image: -o-linear-gradient(top, #9e4b03, #523509);
+  background-image: linear-gradient(to bottom, #9e4b03, #523509);
+  -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #010b12 2px;
+  text-decoration: none;
+}
+
+
+.adventuregame_endresultbutton:hover{
+  background: #b7f03c;
+  background-image: -webkit-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -moz-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -ms-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: -o-linear-gradient(top, #b7f03c, #d1f266);
+  background-image: linear-gradient(to bottom, #b7f03c, #d1f266);
+  text-decoration: none;
+  color:black;
+}
+
+/*=====================================================
+Styles for the sourcediv
+=====================================================*/
+#sourcediv{
+  width: 1200px;
+  height: 820px;
+}
+

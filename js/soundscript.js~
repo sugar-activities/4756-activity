@@ -1,0 +1,11 @@
+
+
+function loadallsounds(){
+var intromusic;
+intromusic = new Audio('./sounds/introsound.ogg'); 
+intromusic.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+intromusic.play();
+}

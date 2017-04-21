@@ -1,0 +1,6 @@
+[Activity]
+name = Adventura
+activity_version = 1
+bundle_id = org.sugarlabs.Adventura
+exec = sugar-activity-web
+icon = activity-icon
